@@ -175,29 +175,28 @@ const United24Banner: React.FC<United24BannerProps> = ({
           <p
             className={`font-semibold text-center md:text-left banner-content ${textColorClasses}`}
           >
-            Stand with Ukraine. Help fund drones, medkits, and victory. Every
-            dollar helps stop{" "}
+            Gracias por su interés en nuestros servicios. Estamos atentos a cualquier duda,  {" "}
             <Link
-              href="https://war.ukraine.ua/russia-war-crimes"
-              target="_blank"
+              href="contact"
+              target=""
               rel="noopener noreferrer"
               className="underline"
             >
-              russia's war crimes
+              contáctanos
             </Link>{" "}
-            and saves lives. Donate now, it matters.
+            y conversemos acerca de tus sueños.
           </p>
         </div>
 
         <div className="flex items-center banner-content">
           <Link
-            href="https://u24.gov.ua"
+            href="https://bercostudio.com"
             target="_blank"
             rel="noopener noreferrer"
             className={buttonClasses}
-            aria-label="Donate to support Ukraine"
+            aria-label="whatsapp"
           >
-            Donate
+            Whatsapp
           </Link>
 
           {showCloseButton && (

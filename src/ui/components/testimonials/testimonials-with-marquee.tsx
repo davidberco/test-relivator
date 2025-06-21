@@ -91,8 +91,8 @@ export function TestimonialsSection({
   return (
     <section
       className={cn(
-        "bg-background text-foreground",
-        "py-12 sm:py-24 md:py-32 px-0",
+        "",
+        "",
         className,
       )}
     >

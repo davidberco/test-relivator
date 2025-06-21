@@ -35,8 +35,13 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
   };
 
   const mainNavigation = [
-    { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
+    { name: "Inicio", href: "/" },
+    { name: "Nosotros", href: "/about" },
+    { name: "Servicios", href: "/services" },
+    { name: "Portafolio", href: "/portafolio" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contacto", href: "/contact" },
+
   ];
 
   const dashboardNavigation = [
@@ -51,7 +56,8 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-6">
+          {/* div with name Inovac */}
+          {/* <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
               <span
                 className={cn(
@@ -60,10 +66,14 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
                     "tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent",
                 )}
               >
-                Relivator
+                Inovac
               </span>
             </Link>
-            <nav className="hidden md:flex">
+          </div> */}
+
+          {/* Nav with 5 items */}
+          <div className="flex items-center gap-6 max-sm:hidden p-4">
+            <nav className="md:flex">
               <ul className="flex items-center gap-6">
                 {navigation.map((item) => {
                   const isActive =
@@ -91,12 +101,91 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
           </div>
 
           <div className="flex items-center gap-4">
-            {!isDashboard && <Cart />}
+            {/* Cart icon */}
+            {/* {!isDashboard && <Cart />} */}
+            
+            {/* Notification icon     */}
+            {/* <NotificationsWidget /> */}
 
-            <NotificationsWidget />
-
-            {showAuth && (
-              <div className="hidden md:block">
+            
+              {/* <div className="hidden md:block">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="relative overflow-hidden rounded-full"
+                      >
+                        {session.user?.image ? (
+                          <img
+                            src={session.user.image}
+                            alt={session.user.name || "User"}
+                            className="h-9 w-9 rounded-full object-cover"
+                          />
+                        ) : (
+                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
+                            <User className="h-4 w-4" />
+                          </span>
+                        )}
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-56">
+                      <div className="flex items-center justify-start gap-2 p-2">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
+                          {session.user?.image ? (
+                            <img
+                              src={session.user.image}
+                              alt={session.user.name || "User"}
+                              className="h-7 w-7 rounded-full object-cover"
+                            />
+                          ) : (
+                            <User className="h-4 w-4 text-primary" />
+                          )}
+                        </div>
+                        <div className="flex flex-col space-y-0.5">
+                          <p className="text-sm font-medium">
+                            {session.user?.name || "User"}
+                          </p>
+                          <p className="text-xs text-muted-foreground truncate max-w-[160px]">
+                            {session.user?.email}
+                          </p>
+                        </div>
+                      </div>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/dashboard/profile"
+                          className="cursor-pointer"
+                        >
+                          <User className="mr-2 h-4 w-4" />
+                          Profile
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/dashboard/settings"
+                          className="cursor-pointer"
+                        >
+                          <Settings className="mr-2 h-4 w-4" />
+                          Settings
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem
+                        onClick={handleSignOut}
+                        className={cn(
+                          "cursor-pointer",
+                          isDashboard
+                            ? "text-red-600"
+                            : "text-destructive focus:text-destructive",
+                        )}
+                      >
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Log out
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                
                 {session ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -186,16 +275,17 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
                     </Link>
                   </div>
                 )}
-              </div>
-            )}
+              </div> */}
+            
 
-            {!isDashboard && <ThemeToggle />}
+            {/* Dark/Light mode toggle */}
+            {/* {!isDashboard && <ThemeToggle />} */}
 
             {/* Mobile menu button */}
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="sm:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
@@ -205,7 +295,29 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
               )}
             </Button>
           </div>
+
+          {/* div with name Inovac */}
+          <div className=" flex items-center gap-6 p-4">
+            {/* Letter Inovac Left */}
+            <Link href="/" className="flex items-center gap-2">
+              <span
+                className={cn(
+                  "text-xl font-bold",
+                  !isDashboard &&
+                    "tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent",
+                )}
+              >
+                Inovac
+              </span>
+            </Link>
+          </div>    
+
+
         </div>
+
+
+          
+
       </div>
 
       {/* Mobile menu */}
@@ -235,6 +347,8 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
             })}
           </div>
 
+          
+
           {showAuth && !session && (
             <div className="space-y-1 px-4 py-3 border-b">
               <Link
@@ -253,8 +367,13 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
               </Link>
             </div>
           )}
+
         </div>
+
       )}
+
+           
+
     </header>
   );
 

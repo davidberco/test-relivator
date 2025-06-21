@@ -1,225 +1,203 @@
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+
 import Link from "next/link";
 
 import { cn } from "~/lib/utils";
 import { Button } from "~/ui/primitives/button";
+import { Phone, Mail, MapPinned } from "lucide-react";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@radix-ui/react-hover-card";
+import Image from "next/image";
+import { WhatsAppIcon } from "../icons/whatsapp";
+import { InstagramIcon } from "../icons/instagram";
+import { FacebookIcon } from "../icons/facebook";
+
 
 export function Footer({ className }: { className?: string }) {
   return (
-    <footer className={cn("border-t bg-background", className)}>
+    <footer className={cn("border-t bg-accent", className)}>
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Relivator
-              </span>
-            </Link>
-            <p className="text-sm text-muted-foreground">
-              Your one-stop shop for everything tech. Premium products at
-              competitive prices.
-            </p>
-            <div className="flex space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full"
-              >
-                <Facebook className="h-4 w-4" />
-                <span className="sr-only">Facebook</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full"
-              >
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full"
-              >
-                <Instagram className="h-4 w-4" />
-                <span className="sr-only">Instagram</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full"
-              >
-                <Github className="h-4 w-4" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full"
-              >
-                <Linkedin className="h-4 w-4" />
-                <span className="sr-only">LinkedIn</span>
-              </Button>
-            </div>
+
+        {/* Container 1 footer */}
+        <div className="grid grid-rows-1 md:grid-cols-3 gap-8 px-12 pb-12 border-b" >
+          {/* logo Inovac black */}          
+          <div className="row-start-1 md:col-start-1 items-center justify-center flex">
+            <Image  
+              src="/logoInovacBlack.svg"
+              alt="Inovac Construcciones Logo"
+              width={300}
+              height={81}
+              className="object-cover max-w-[150px] md:min-w-[300px]" />
           </div>
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Shop</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/products"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  All Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products?category=audio"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Audio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products?category=wearables"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Wearables
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products?category=smartphones"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Smartphones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products?category=laptops"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Laptops
-                </Link>
-              </li>
-            </ul>
+
+          {/* Links */}
+          <div className="row-start-2 md:row-start-1 md:col-start-2 md:col-span-2 space-y-4 text-base sm:text-lg items-center justify-center flex flex-col">
+          {/* Visitar otras secciones Links */}
+            
+              <h3 className="mb-4 text-md font-semibold">Visita otras secciones</h3>
+              <ul className="space-y-2 text-md flex flex-row gap-4 flex-wrap">
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Nosotros
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Servicios
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/portafolio"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Portafolio
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Contacto
+                  </Link>
+                </li>
+              </ul>
+            
           </div>
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/press"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Press
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Support</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/help"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shipping"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Shipping & Returns
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/warranty"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Warranty
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
+
         </div>
-        <div className="mt-12 border-t pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Relivator. All rights reserved.
-            </p>
+
+        {/* Container 2 footer */}
+        <div className="grid grid-rows-1 md:grid-cols-3 gap-8 px-12">
+
+          {/* Contact information */}
+          <div className="row-start-2 space-y-4 text-base sm:text-lg flex flex-col ">
+            
+            {/* Contactanos Button  */}
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link href="/contact">
+                <Button size="lg" className="uppercase h-12 px-8">
+                  Contáctanos
+                </Button>
+              </Link>
+            </div>
+            {/* Contact information like email, phone etc */}
+            <ul className="list-none p-6">  
+              <li className="flex items-center gap-4 mb-8">
+                <Phone className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
+                <h2 className="text-muted-foreground text-md  font-normal tracking-tight capitalize">
+                  (+593) 0999 828 558
+                </h2>
+              </li> 
+              <li className="flex items-center gap-4 mb-8">
+                <Mail className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
+                <h2 className="text-muted-foreground text-md  font-normal tracking-tight ">
+                  <a href="mailto:info@inovaconstrucciones.com">info@inovaconstrucciones.com</a>
+                </h2>
+              </li> 
+              <li className="flex items-center gap-4 mb-8">
+                <MapPinned className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
+                <h2 className="text-muted-foreground text-md  font-normal tracking-tight ">
+                  Av. Libertadores E23-21 y calle N
+                </h2>
+              </li> 
+            </ul>
+          </div>
+
+          {/* social media icons and proveedor */}
+          <div className="row-start-1 md:row-start-2 col-start-1 md:col-start-2 md:col-span-2 items-center justify-start flex flex-col">
+
+          {/* My approach */}
+          <div className="space-x-6 items-center p-6">
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-16 w-16 rounded-2xl flex-shrink-0 shadow-md "
+            >
+              <WhatsAppIcon className="h-24 w-24 scale-150" />
+              <span className="sr-only">Whatsapp</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-16 w-16 rounded-2xl flex-shrink-0 shadow-md "
+            >
+              <InstagramIcon className="h-24 w-24 scale-150" />
+              <span className="sr-only">Instagram</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-16 w-16 rounded-2xl flex-shrink-0 shadow-md "
+            >
+              <FacebookIcon className="h-24 w-24 scale-150" />
+              <span className="sr-only">Facebook</span>
+            </Button>
+            
+          </div>
+
+            <ul className="list-none p-6 items-center justify-center flex flex-col">  
+              <li className="flex items-center gap-4 mb-8">
+                <h2 className="text-muted-foreground text-md  font-semibold tracking-tight capitalize">
+                  ¿Eres proveedor?
+                </h2>
+              </li> 
+              <li className="flex items-center gap-4 mb-8">
+                
+                <h2 className="text-muted-foreground text-md  font-semibold tracking-tight capitalize">
+                  Contáctanos aquí 
+                </h2>
+              </li> 
+              <li className="flex items-center gap-4 mb-8">
+                {/* <Mail className="h-6 w-6 flex-shrink-0 text-muted-foreground" /> */}
+                <h2 className="text-muted-foreground text-md  font-semibold tracking-tight underline">
+                  <a href="mailto:info@inovaconstrucciones.com">info@inovaconstrucciones.com</a>
+                </h2>
+              </li> 
+            </ul>
+          </div>
+          
+        </div>
+
+        {/* Copyright, bercostudio, privacy, terms  */}
+        <div className="mt-6 border-t pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 ">
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <p>Web Development by {" "}
+              <Link href="https://www.bercostudio.com" target='_blank' className="hover:text-yellow-500 font-bold">
+                BercoStudio
+              </Link></p>
+
               <Link href="/privacy" className="hover:text-foreground">
                 Privacy
               </Link>
               <Link href="/terms" className="hover:text-foreground">
                 Terms
               </Link>
-              <Link href="/cookies" className="hover:text-foreground">
-                Cookies
-              </Link>
-              <Link href="/sitemap" className="hover:text-foreground">
-                Sitemap
-              </Link>
+              
+              
             </div>
+            <p className="text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()} Inovac Construcciones. Derechos Reservados.
+            </p>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

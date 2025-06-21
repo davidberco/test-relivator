@@ -1,17 +1,23 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import { CartProvider } from "~/lib/hooks/use-cart";
 import { ThemeProvider } from "~/ui/components/theme-provider";
 
 import "~/css/globals.css";
 import { Footer } from "~/ui/components/footer";
 import { Header } from "~/ui/components/header";
+import { FloatingMenu } from "~/ui/components/floating-menu";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${openSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -42,6 +48,8 @@ export default function RootLayout({
           <CartProvider>
             <div className="flex min-h-screen flex-col">
               <Header showAuth={true} />
+              {/* <LeftMenu showAuth={true} /> */}
+              <FloatingMenu />
               {children}
               <Footer />
             </div>

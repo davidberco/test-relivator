@@ -20,6 +20,9 @@
 }
 
 :root {
+  /* --font-geist-sans: 'Geist Sans', system-ui, sans-serif; */
+  --font-open-sans: 'Open Sans', system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -135,5 +138,65 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-open-sans);
   }
+}
+
+mark {
+  background-color: var(--color-primary);
+  color: var(--color-sidebar-primary-foreground);
+  font-style: italic;
+  clip-path: polygon(0% 15%, 100% 15%, 120% 100%, 0% 100%);
+}
+
+/* Style for Parallax Effect */
+
+@layer utilities {
+  /* Parallax effect using CSS custom properties */
+  .parallax-bg-far,
+  .parallax-bg-slow,
+  .parallax-bg-medium,
+  .parallax-bg-fast {
+    transform: translateY(calc(var(--scroll, 0) * var(--speed, 0.5) * 1px));
+    will-change: transform;
+  }
+
+  /* Performance optimizations */
+  .parallax-bg-far,
+  .parallax-bg-slow,
+  .parallax-bg-medium,
+  .parallax-bg-fast {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  /* Optional: Add smooth transition for reduced motion users */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-bg-far,
+    .parallax-bg-slow,
+    .parallax-bg-medium,
+    .parallax-bg-fast {
+      transform: none !important;
+    }
+  }
+}
+
+/* Custom animations for floating elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(-10px); }
+  50% { transform: translateY(10px); }
+}
+
+/* Utility classes for enhanced animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite;
 }
