@@ -39,7 +39,7 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
     { name: "Nosotros", href: "/about" },
     { name: "Servicios", href: "/services" },
     { name: "Portafolio", href: "/portafolio" },
-    { name: "Blog", href: "/blog" },
+    { name: "Blog", href: "/posts" },
     { name: "Contacto", href: "/contact" },
 
   ];
