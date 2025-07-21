@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/ui/primitives/card";
-import { categories, featuredProducts, services, testimonials } from "~/./app/mocks";
+import { aboutUsImages, categories } from "~/./app/mocks";
 import { Carousel } from "~/ui/components/carousel";
 import { Carouselmp, CarouselContent, CarouselItem, CarouselNavigation, CarouselIndicator, CarouselAutoplayOnView } from "~/ui/primitives/carouselmp";
 import { DecoratedTextBox } from "~/ui/components/decoratedTextBox";
@@ -50,7 +50,7 @@ const features = [
   },
 ];
 
-export default function HomePage() {
+export default function AboutPage() {
 
   const ref = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
@@ -143,30 +143,30 @@ export default function HomePage() {
               </p>
             </div> */}
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-              {categories.map((category) => (
-                <Link
-                  key={category.name}
-                  href={`/products?category=${category.name.toLowerCase()}`}
+              {aboutUsImages.map((aboutUsImages) => (
+                <div
+                  key={aboutUsImages.name}
                   className="group relative flex flex-col overflow-hidden rounded-lg border bg-card transition-all duration-200 hover:shadow-md"
-                  aria-label={`Browse ${category.name} products`}
+                  aria-label={`Browse ${aboutUsImages.name} products`}
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/80 to-transparent" />
                     <Image
-                      src={category.image}
-                      alt={category.name}
+                      src={aboutUsImages.image}
+                      alt={aboutUsImages.name}
                       fill
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
                       className="object-cover transition duration-300 group-hover:scale-105"
                     />
                   </div>
                  
-                </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Images and text with isotype animated in background */}
         <section ref={ref} className="relative w-full overflow-hidden py-12 md:py-16">
           {/* Isotype animated bg 1 */}
           <motion.div 
@@ -204,7 +204,7 @@ export default function HomePage() {
                 springOptions={{ damping: 20, stiffness: 300 }}>
               <div className="relative z-10 aspect-[1/1] rounded-md overflow-hidden shadow-lg">
                 <Image
-                  src="/cliente2Bg.jpg" // Replace with real image
+                  src="/nosotros5.jpg" 
                   alt="Main Architectural Shot"
                   fill
                   className="object-cover"
@@ -228,7 +228,7 @@ export default function HomePage() {
                 springOptions={{ damping: 20, stiffness: 300 }}>
               <div className="relative z-10 aspect-[1/1] rounded-md overflow-hidden shadow-lg">
                 <Image
-                  src="/cliente2Bg.jpg" // Replace with real image
+                  src="/nosotros7.jpg" // Replace with real image
                   alt="Main Architectural Shot"
                   fill
                   className="object-cover"
@@ -239,7 +239,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Text Decorated Box Un lugar que refleje*/}
+        {/* Text Decorated Box disenanmos el futuro...*/}
         <section id="features" className="py-12 md:py-16">
           <div className="relative  mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -258,7 +258,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Text: En Inovac sabemos que...  it was NOT PART OF original figma file */}
+        {/* section Organigrama */}
         <section id="" className="py-4 md:py-8">
           <div className="px-4 sm:px-6 lg:px-8 ">
           <div className="bg-[url('/logo Inovac Black.svg')]"> 
@@ -268,34 +268,7 @@ export default function HomePage() {
                   Organigrama
               </h2>
             </div>
-          </div>
-          {/* Tilt Effect Container with Image 1 */}
-          <div className="relative grid grid-row-2 grid-cols-3 gap-2 md:grid-cols-5 items-center justify-center mx-auto max-w-7xl px-12 md:px-0">
-            {/* <h2 className="col-start-2 md:col-start-2 md:col-span-3 p-6 text-xl md:text-2xl font-semibold tracking-tight text-center">
-              Contamos con profesionales en áreas como:
-            </h2> */}
-            <div className=" hidden col-start-1 row-start-2 col-span-3 md:col-start-2 md:col-span-3">
-              <TiltEffect 
-                rotationFactor={1} 
-                isReverse={true} 
-                springOptions={{ damping: 20, stiffness: 400 }}
-                enable3D={false}
-                className="w-full h-[300px] rounded-lg p-8 shadow-md bg-stone-100" 
-                >
-                  {/* <Image
-                    src=""
-                    alt="elichrom building"
-                    width={1000}
-                    height={1000}
-                    className="object-contain"
-                    loading="eager"
-                  /> */}
-                  <h2 className="text-sm font-semibold tracking-normal text-center mt-6 uppercase">
-                    organigrama-mapa mental
-                  </h2>
-              </TiltEffect>
-            </div>
-          </div>
+          </div>       
 
           {/* Container for carousel */}
           <div className="relative overflow-hidden container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
@@ -348,7 +321,6 @@ export default function HomePage() {
             </Carouselmp>
           </div> 
         </section> 
-
       </main>
     </>
   );

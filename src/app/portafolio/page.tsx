@@ -16,16 +16,16 @@ export default function HomePage() {
     <>
       <main className="">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 via-muted/25  to-background h-[65vh] flex flex-col items-center justify-center">
+        <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 via-muted/25 to-background h-[65vh] flex flex-col items-center justify-center">
           
           <div className="relative mx-auto aspect-[4/3] w-full max-w-6xl overflow-hidden center-0">
             <div className="relative inset-0 z-10 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
             <Image
-              src={'/sketchHouseWhite.jpg'}
-              alt="curved building bg"
+              src={'/EncabezadoPortafolio3.jpg'}
+              alt="encabezado portafolio"
               fill
               sizes=""
-              className="object-cover opacity-75"
+              className="object-cover opacity-85"
               priority
             />
           </div>
@@ -115,8 +115,8 @@ export default function HomePage() {
         
                   {/* Background Image */}
                   <Image
-                    src={services[0].image}
-                    alt={services[0].name}
+                    src={'/residencial.jpg'}
+                    alt="residencial"
                     fill
                     className="object-cover transition-transform duration-500 rounded-xl contrast-90 group-hover:contrast-100"
                   />
@@ -158,8 +158,8 @@ export default function HomePage() {
         
                   {/* Background Image */}
                   <Image
-                    src={services[1].image}
-                    alt={services[1].name}
+                    src={'/Corporativo.jpg'}
+                    alt="corporativo"
                     fill
                     className="object-cover transition-transform duration-500 rounded-xl contrast-90 group-hover:contrast-100"
                   />
@@ -198,8 +198,8 @@ export default function HomePage() {
         
                   {/* Background Image */}
                   <Image
-                    src={services[2].image}
-                    alt={services[2].name}
+                    src={'/ArquitecturaYplanificación2.jpg'}
+                    alt="ArquitecturaYplanificación2"
                     fill
                     className="object-cover transition-transform duration-500 rounded-xl contrast-90 group-hover:contrast-100"
                   />

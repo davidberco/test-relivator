@@ -110,6 +110,30 @@ export const categories = [
   
 ];
 
+export const aboutUsImages = [
+  {
+    name: "nosotros1",
+    label: "nosotros 1",
+    width: "300",
+    heigth: "300",
+    image: "/nosotros1.jpg",
+  },
+  {
+    name: "nosotros2",
+    label: "nosotros 2",
+    width: "300",
+    heigth: "300",
+    image: "/nosotros2.jpg",
+  },
+  {
+    name: "nosotros4",
+    label: "nosotros 4",
+    width: "300",
+    heigth: "300",
+    image: "/nosotros4.jpg",
+  },
+]
+
 // Testimonials for the testimonials section
 export const testimonials = [
   {

@@ -208,13 +208,13 @@ export interface SearchResult {
   type: string;
   subtype: string;
   _links: {
-    self: Array<{
+    self: {
       embeddable: boolean;
       href: string;
-    }>;
-    about: Array<{
+    }[];
+    about: {
       href: string;
-    }>;
+    }[];
   };
 }
 

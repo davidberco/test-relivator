@@ -25,11 +25,11 @@ export default function HomePage() {
           <div className="absolute mx-auto aspect-[9/16] w-full max-w-lg overflow-hidden right-0">
               <div className="absolute inset-0 z-10 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
               <Image
-                src={'/buildingCurveShapesBlackWhite.jpg'}
+                src={'/ServiciosEncabezado2.jpg'}
                 alt="curved building bg"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover opacity-75"
+                className="object-cover opacity-60"
                 priority
               />
             </div>
@@ -126,8 +126,8 @@ export default function HomePage() {
         
                   {/* Background Image */}
                   <Image
-                    src={services[0].image}
-                    alt={services[0].name}
+                    src={'/ServiciosDiseño.jpg'}
+                    alt={'Diseño de Servicios'}
                     fill
                     className="object-cover transition-transform duration-500 rounded-xl contrast-90 group-hover:contrast-100"
                   />
@@ -187,8 +187,8 @@ export default function HomePage() {
         
                   {/* Background Image */}
                   <Image
-                    src={services[1].image}
-                    alt={services[1].name}
+                    src={'/ServiciosConstrucción.jpg'}
+                    alt={'Construcción de Servicios'}
                     fill
                     className="object-cover transition-transform duration-500 rounded-xl contrast-90 group-hover:contrast-100"
                   />
@@ -231,8 +231,8 @@ export default function HomePage() {
         
                   {/* Background Image */}
                   <Image
-                    src={services[2].image}
-                    alt={services[2].name}
+                    src={'/ServiciosRemodelación.jpg'}
+                    alt={'Remodelación de Servicios'}
                     fill
                     className="object-cover transition-transform duration-500 rounded-xl contrast-90 group-hover:contrast-100"
                   />

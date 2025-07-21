@@ -75,3 +75,4 @@ export async function PostCard({ post }: { post: Post }) {
     </Link>
   );
 }
+

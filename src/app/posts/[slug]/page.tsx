@@ -21,8 +21,6 @@ const siteConfig = {
   site_domain: "https://bercostudio",
 };
 
-
-
 export async function generateStaticParams() {
   const posts = await getAllPosts();
 
@@ -141,3 +139,4 @@ export default async function Page({
     </div>
   );
 }
+

@@ -91,7 +91,7 @@ if (hasGoogleCredentials) {
 
 export const auth = betterAuth({
   baseURL: process.env.NEXT_SERVER_APP_URL,
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.BETTER_AUTH_SECRET,
 
   database: drizzleAdapter(db, {
     provider: "pg",
