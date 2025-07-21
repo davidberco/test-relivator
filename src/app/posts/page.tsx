@@ -76,11 +76,11 @@ export default async function Page({
   return (
     <section>
       <div>
-        <div className="space-y-8">
+        <div className="container mx-auto px-4 py-8">
           <div>
-            <h2>All Posts</h2>
+            <h2>Todos los Posts</h2>
             <p className="text-muted-foreground">
-              {posts.length} {posts.length === 1 ? "post" : "posts"} found
+              {posts.length} {posts.length === 1 ? "post" : "posts"} encontrados
               {search && " matching your search"}
             </p>
           </div>
@@ -106,7 +106,7 @@ export default async function Page({
             </div>
           ) : (
             <div className="h-24 w-full border rounded-lg bg-accent/25 flex items-center justify-center">
-              <p>No posts found</p>
+              <p>No se encontraron posts</p>
             </div>
           )}
 

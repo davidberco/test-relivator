@@ -8,9 +8,9 @@ import { Button } from "~/ui/primitives/button";
 import { cn } from "~/lib/utils";
 
 // Using react-icons instead of lucide (installed via package.json)
-import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { CompanyLogoSVG } from "~/ui/icons/company-logo-svg";
-import { transform } from "typescript";
+import Image from "next/image";
 
 export function FloatingMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +59,6 @@ export function FloatingMenu() {
   return (
     <div className="fixed left-4 bottom-1/4 z-40">
       {/* Rectangular menu button */}
-     
       <motion.div
         variants={logoVariants}
         initial="rest"
@@ -79,7 +78,7 @@ export function FloatingMenu() {
           <motion.div variants={logoVariants}
           initial="rest"
           whileHover="hover">
-          <CompanyLogoSVG className="h-8 w-auto size-4" />
+            <CompanyLogoSVG className="h-8 w-auto size-4"/>
           </motion.div>
           
           <motion.span 
@@ -117,111 +116,132 @@ export function FloatingMenu() {
                 size="icon"
                 variant="ghost"
                 className={cn(
-                  "bg-accent h-14 w-14 rounded-full", // Larger size
-                  "hover:bg-accent/75", // Subtle hover effect
+                  "bg-grayinova/25 h-10 w-10 md:h-14 md:w-14 rounded-full", 
+                  "hover:bg-accent/75", 
                   "text-primary ",
-                  "border border-primary hover:border-primary/45", // Subtle border
-                  "transition-all duration-200" // Smooth transitions
+                  "border border-primary hover:border-redinova", 
+                  "transition-all duration-200" 
                   
                 )}
               >
-                <X className="size-5" strokeWidth={2}/>
+                <X className="size-5 md:size-6" strokeWidth={2}/>
               </Button>
             </div>
 
-            <div className="mx-auto w-full max-w-2xl px-4 sm:px-6 space-y-8 mt-8">
+            <div className="mx-auto w-full flex-auto px-4 sm:px-6 my-[8dvh] grid grid-cols-1 grid-rows-3 gap-2 md:grid-cols-3 md:grid-rows-2 md:gap-8 [&>*]:my-0 ">
+              {/* Logo Section */}
+              <motion.section
+                variants={itemVariants}
+                transition={{ delay: 0.1 }}
+                className="hidden md:block row-start-1 flex flex-col self-center"
+              >
+                <motion.div variants={logoVariants}
+                initial="rest"
+                whileHover="hover">
+                  <Link href="/" className="flex items-center justify-center">
+                    <Image 
+                    src="./logoInovacColor.svg" alt="Inovac Logo" 
+                    width={300} 
+                    height={80} 
+                    className="p-4 h-auto min-w-[300]"></Image>
+                  </Link>
+                </motion.div>
+              </motion.section>
+
               {/* Servicios Section */}
               <motion.section
                 variants={itemVariants}
                 transition={{ delay: 0.1 }}
+                className="flex flex-col justify-center items-center border-1 border-redinova shadow-md bg-grayinova/35 col-start-1 row-start-1 md:col-start-2 md:row-start-1"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary">Servicios</h2>
-                <ul className="pt-4 sm:pt-6">
+                <h2 className="text-2xl sm:text-3xl font-black text-primary m-6">Servicios</h2>
+                <ul className="py-4 text-center">
                   <li>
-                    <Link href="/services#diseno" className="block rounded-md py-2 px-3 text-base sm:text-lg transition-all duration-200 
-                    hover:bg-accent/80 hover:text-primary hover:shadow-md" onClick={toggleMenu}>
+                    <Link href="/services#diseno" className="block rounded-sm py-2 md:py-4 px-4 font-semibold text-lg transition-all duration-200 
+                    hover:bg-accent/80 hover:shadow-md hover:outline-1 hover:outline-redinova" onClick={toggleMenu}>
                       Diseño
                     </Link>
                   </li>
+                  <div className="border-t border-grayinova my-2"></div>
                   <li>
-                    <Link href="/services#construccion" className="block rounded-md py-2 px-3 text-base sm:text-lg transition-all duration-200 
-                    hover:bg-accent/80 hover:text-primary hover:shadow-md" onClick={toggleMenu}>
+                    <Link href="/services#construccion" className="block rounded-sm py-2 md:py-4 px-4 font-semibold text-lg transition-all duration-200 
+                    hover:bg-accent/80 hover:shadow-md hover:outline-1 hover:outline-redinova" onClick={toggleMenu}>
                       Construcción
                     </Link>
                   </li>
+                    <div className="border-t border-grayinova my-2"></div>
                   <li>
-                    <Link href="/services#remodelacion" className="block rounded-md py-2 px-3 text-base sm:text-lg transition-all duration-200 
-                    hover:bg-accent/80 hover:text-primary hover:shadow-md" onClick={toggleMenu}>
+                    <Link href="/services#remodelacion" className="block rounded-sm py-2 md:py-4 px-4 font-semibold text-lg transition-all duration-200 
+                    hover:bg-accent/80 hover:shadow-md hover:outline-1 hover:outline-redinova" onClick={toggleMenu}>
                       Remodelación
                     </Link>
                   </li>
                 </ul>
               </motion.section>
 
-              <div className="border-t border-gray-200 my-6"></div>
-
               {/* Portafolio Section */}
               <motion.section
                 variants={itemVariants}
                 transition={{ delay: 0.2 }}
+                className="flex flex-col justify-center items-center border-1 border-redinova shadow-md bg-grayinova/35 col-start-1 row-start-2 md:col-start-3 md:row-start-1"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary">Portafolio</h2>
-                <ul className="pt-4 sm:pt-6">
+                <h2 className="text-2xl sm:text-3xl font-black text-primary m-6">Portafolio</h2>
+                <ul className="py-4 text-center">
                   <li>
-                    <Link href="/portafolio#residencial" className="block rounded-md py-2 px-3 text-base sm:text-lg transition-all duration-200 
-                    hover:bg-accent/80 hover:text-primary hover:shadow-md" onClick={toggleMenu}>
+                    <Link href="/portafolio#residencial" className="block rounded-sm py-2 md:py-4 px-4 font-semibold text-lg transition-all duration-200 
+                    hover:bg-accent/80 hover:shadow-md hover:outline-1 hover:outline-redinova" onClick={toggleMenu}>
                       Residencial
                     </Link>
                   </li>
+                   <div className="border-t border-grayinova my-2"></div>
                   <li>
-                    <Link href="/portafolio#corporativo" className="block rounded-md py-2 px-3 text-base sm:text-lg transition-all duration-200 
-                    hover:bg-accent/80 hover:text-primary hover:shadow-md" onClick={toggleMenu}>
+                    <Link href="/portafolio#corporativo" className="block rounded-sm py-2 md:py-4 px-4 font-semibold text-lg transition-all duration-200 
+                    hover:bg-accent/80 hover:shadow-md hover:outline-1 hover:outline-redinova" onClick={toggleMenu}>
                       Corporativo
                     </Link>
                   </li>
+                   <div className="border-t border-grayinova my-2"></div>
                   <li>
-                    <Link href="/portafolio#planificacion" className="block rounded-md py-2 px-3 text-base sm:text-lg transition-all duration-200 
-                    hover:bg-accent/80 hover:text-primary hover:shadow-md" onClick={toggleMenu}>
-                      Planificación
+                    <Link href="/portafolio#planificacion" className="block rounded-sm py-2 md:py-4 px-4 font-semibold text-lg transition-all duration-200 
+                    hover:bg-accent/80 hover:shadow-md hover:outline-1 hover:outline-redinova" onClick={toggleMenu}>
+                      Arquitectura <br/>y Planificación
                     </Link>
                   </li>
                 </ul>
               </motion.section>
 
-              <div className="border-t border-gray-400 my-6"></div>
-
               {/* Contact Section */}
               <motion.section
                 variants={itemVariants}
                 transition={{ delay: 0.3 }}
-                className=" flex flex-col items-center justify-center"
+                className=" flex flex-col items-center justify-start col-start-1 row-start-3 md:col-start-1 md:row-start-2 md:col-span-3"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary">Contáctanos</h2>
+                {/* <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary">Contáctanos</h2> */}
                 <div className="flex m-4 items-center">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors px-4 ">
-                    <FaInstagram className="h-12 w-12" />
+                  <a href="https://www.instagram.com/inovaconstrucciones/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors px-4 ">
+                    <FaInstagram className="h-10 w-10 md:h-12 md:w-12" />
                   </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors px-4">
-                    <FaYoutube className="h-12 w-12" />
+                  <a href="https://wa.me/593999828558" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors px-4">
+                    <FaWhatsapp className="h-10 w-10 md:h-12 md:w-12" />
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors px-4">
-                    <FaFacebook className="h-12 w-12" />
+                  <a href="https://www.facebook.com/inovaconstruccionesUIO" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors px-4">
+                    <FaFacebook className="h-10 w-10 md:h-12 md:w-12" />
                   </a>
                 </div>
-                <div className="space-y-4 text-base sm:text-lg flex flex-col items-center">
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-6 w-6 text-primary" />
-                    <span className="font-bold">Teléfono: (+593) 0999 828 558</span>
+                <div className="space-y-4 mt-4 text-base sm:text-lg flex flex-col items-left md:items-center">
+                  <div className="flex  gap-3">
+                    <Phone className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                    <span className="font-semibold">(+593) 999 828 558</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Mail className="h-6 w-6 text-primary" />
-                    <span className="font-bold">
+                    <Mail className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                    <span className="font-semibold">
                       <a href="mailto:info@inovaconstrucciones.com">info@inovaconstrucciones.com</a>
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <span className="font-bold">Dirección: Av. Libertadores E23-21 y calle N</span>
+                    <MapPin className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                    <span className="font-semibold">Valle de los Chillos, Quito – Ecuador.</span>
                   </div>
                 </div>
               </motion.section>

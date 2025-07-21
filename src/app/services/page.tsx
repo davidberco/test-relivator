@@ -1,4 +1,5 @@
 import { ArrowRight, Car, Clock, ShoppingBag, Star, Truck, ArrowDown } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -55,7 +56,7 @@ export default function HomePage() {
                   
                   <h1 className="text-5xl md:text-7xl font-bold md:tracking-tight text-foreground leading-[1.2] py-4 px-4 md:px-12 lg:px-18" >
                   Diseñamos el futuro de la {" "}
-                  <mark>Construcción</mark>
+                  <i className="remarkWord">Construcción</i>
                   </h1>
 
                   <p className="text-left text-xl md:text-3xl font-semibold leading-normal pl-20 px-8">
@@ -90,6 +91,15 @@ export default function HomePage() {
 
         {/* Diseno Section */}
         <section id="diseno" className="py-12 md:py-16" >
+          {/* Content Container */}
+          <div className="mx-auto pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+            <div className="">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+              Servicios 
+              </h2>
+            </div>
+          </div>
+          
           {/* section Service [0] DISENO */}
           <div className="mx-auto px-6 md:px-8">
             <div
@@ -97,9 +107,9 @@ export default function HomePage() {
               className="relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-[min-content_1fr] items-center justify-between pt-12 md:pt-24"
             >
               {/* Title with brackets component */}
-              <div className="row-start-1 col-start-1 col-span-2 md:col-start-2">
+              <div className="row-start-1 col-start-1 col-span-2 md:col-start-2 ">
                 <DecoratedTextBox className="h-5 my-8">
-                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-black uppercase tracking-normal md:px-[30] lg:px-[50]">
+                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-black uppercase tracking-normal md:px-[30] lg:px-[50] text-muted-foreground">
                   {services[0].name}
                   </h2>
                 </DecoratedTextBox>
@@ -135,7 +145,7 @@ export default function HomePage() {
 
           {/* final title */}
           <div className="m-6 flex flex-col items-center text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl m-4 max-w-2xl text-center text-muted-foreground">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl m-4 text-center text-muted-foreground">
               No dejes que tus sueños se queden en el papel.
             </h2>
           </div>
@@ -160,7 +170,7 @@ export default function HomePage() {
               {/* Title with brackets component */}
               <div className="row-start-1 col-start-1 col-span-2 md:col-start-1">
                 <DecoratedTextBox className="h-5 my-8">
-                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-black uppercase tracking-normal md:px-[30] lg:px-[50]">
+                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-black uppercase tracking-normal md:px-[30] lg:px-[50] text-muted-foreground">
                   {services[1].name}
                   </h2>
                 </DecoratedTextBox>
@@ -204,7 +214,7 @@ export default function HomePage() {
               {/* Title with brackets component */}
               <div className="row-start-1 col-start-1 col-span-2 md:col-start-2">
                 <DecoratedTextBox className="h-5 my-8">
-                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-black uppercase tracking-normal md:px-[30] lg:px-[50]">
+                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-black uppercase tracking-normal md:px-[30] lg:px-[50] text-muted-foreground">
                   {services[2].name}
                   </h2>
                 </DecoratedTextBox>
@@ -256,13 +266,31 @@ export default function HomePage() {
         </section>
 
         {/* Contact Form */}
-        <section id="features" className="py-8"> 
-            <div className="mb-8 pr-20 pl-20 items-center text-center">
-              <h2 className="text-2xl font-semibold md:text-4xl">
-                Comunícate con nosotros, estamos listos para asesorarte.
+        <section id="features" className="py-8">
+          <div className="mb-8 pr-20 pl-20 items-center text-center">
+            <h2 className="text-xl md:text-3xl font-semibold leading-normal">
+              Comunícate con nosotros, estamos listos para asesorarte.
+            </h2>
+          </div>
+          <div className="relative mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div className="items-center text-center px-8 max-w-[50vw]">
+              <h2 className="text-xl font-bold leading-normal">
+                Puedes enviarnos un mensaje llenando el formulario, o comunicarte via whatsapp.
               </h2>
+              {/* whatsapp Button  */}
+              <div className="m-6 flex gap-6 flex-row center justify-center">
+                <Link href="wa.me/593999828558" target="_blank" rel="noopener noreferrer">
+                  <Button variant="default" size="lg" className="h-12 px-8 uppercase">
+                    <FaWhatsapp className="h-12 w-12" />
+                    Whatsapp
+                  </Button>
+                </Link>
+              </div>
             </div>
-          <ContactForm />  
+            <div className="items-center text-center min-w-[50vw]">
+              <ContactForm /> 
+            </div>
+          </div> 
         </section> 
       </main>
     </>

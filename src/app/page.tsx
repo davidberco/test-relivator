@@ -21,6 +21,7 @@ import ClientVision from "~/ui/components/ClientVisionSection";
 import NosotrosTransformamosSection from "~/ui/components/NosotrosTransformamosSection";
 import { TiltEffect } from "~/ui/components/TiltEffect";
 import ElicromSection from "~/ui/components/ElicromSection";
+import { FaWhatsapp } from "react-icons/fa";
 
 // Mock data for the Why Choose Us section
 const features = [
@@ -100,7 +101,7 @@ export default function HomePage() {
                   Descubre lo magnífico de {" "}
                     {/* <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     </span> */}
-                      Construir <mark>Sueños</mark>
+                      Construir <i className="remarkWord">Sueños</i>
                   </h1>
 
                   {/* <p className="max-w-[700px] text-lg text-muted-foreground md:text-xl">
@@ -111,10 +112,16 @@ export default function HomePage() {
                 {/* Asesoria Button  */}
                 <div className="flex flex-col gap-6 sm:flex-row center sm:justify-center">
                   <Link href="/contact">
-                    <Button variant="default" size="lg" className="h-12 px-8 uppercase">
+                    <Button variant="default" size="lg" className="h-12 uppercase px-8">
                       Solicitar Asesoría
                     </Button>
                   </Link>
+                  <Link href="/contact">
+                    <Button variant="outline" size="lg" className="hidden h-12 uppercase">
+                      Solicitar Asesoría
+                    </Button>
+                  </Link>
+                  
                 </div>
                 
                 {/* Icons and text maybe whatsapp connections, if client req STATUS HIDDEN For sale*/}
@@ -342,7 +349,7 @@ export default function HomePage() {
               </h2>
               <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
               <p className="mt-4 max-w-2xl text-center text-muted-foreground">
-                Descubre cómo Inovac puede transformar tu visión en realidad.
+                Descubre cómo <strong>Inovac</strong> puede transformar tu visión en realidad.
               </p>
             </div>
 
@@ -393,7 +400,7 @@ export default function HomePage() {
                   {/* Asesoria Button  */}
                   <div className="flex flex-col sm:flex-row center sm:justify-center p-6 pt-10">
                     <Link href={service.linkService}>
-                      <Button variant="outline" size="default" className="h-12 px-8 uppercase">
+                      <Button variant="default" size="default" className="h-12 px-6 uppercase">
                         Conocer más
                       </Button>
                     </Link>
@@ -415,8 +422,9 @@ export default function HomePage() {
             </div>
             {/* Asesoria Button  */}
             <div className="flex gap-6 flex-row center justify-center">
-              <Link href="/contact">
+              <Link href="http://wa.me/593999828558?text=Saludos,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20y%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer">
                 <Button variant="default" size="lg" className="h-12 px-8 uppercase">
+                  <FaWhatsapp className="h-12 w-12" />
                   Agenda una cita
                 </Button>
               </Link>

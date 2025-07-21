@@ -100,7 +100,7 @@ export function Footer({ className }: { className?: string }) {
               <li className="flex items-center gap-4 mb-8">
                 <Phone className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
                 <h2 className="text-muted-foreground text-md  font-normal tracking-tight capitalize">
-                  (+593) 0999 828 558
+                  (+593) 999 828 558
                 </h2>
               </li> 
               <li className="flex items-center gap-4 mb-8">
@@ -112,7 +112,7 @@ export function Footer({ className }: { className?: string }) {
               <li className="flex items-center gap-4 mb-8">
                 <MapPinned className="h-6 w-6 flex-shrink-0 text-muted-foreground" />
                 <h2 className="text-muted-foreground text-md  font-normal tracking-tight ">
-                  Av. Libertadores E23-21 y calle N
+                  Valle de los Chillos, Quito – Ecuador.
                 </h2>
               </li> 
             </ul>
@@ -142,7 +142,7 @@ export function Footer({ className }: { className?: string }) {
             <Button
               variant="outline"
               size="icon"
-              className="h-16 w-16 rounded-2xl flex-shrink-0 shadow-md "
+              className="h-16 w-16 rounded-2xl flex-shrink-0 shadow-md"
             >
               <FacebookIcon className="h-24 w-24 scale-150" />
               <span className="sr-only">Facebook</span>
@@ -153,21 +153,19 @@ export function Footer({ className }: { className?: string }) {
             <ul className="list-none p-6 items-center justify-center flex flex-col">  
               <li className="flex items-center gap-4 mb-8">
                 <h2 className="text-muted-foreground text-md  font-semibold tracking-tight capitalize">
-                  ¿Eres proveedor?
+                  ¿Eres proveedor? Puedes contactarnos aquí
                 </h2>
-              </li> 
-              <li className="flex items-center gap-4 mb-8">
                 
-                <h2 className="text-muted-foreground text-md  font-semibold tracking-tight capitalize">
-                  Contáctanos aquí 
-                </h2>
               </li> 
               <li className="flex items-center gap-4 mb-8">
-                {/* <Mail className="h-6 w-6 flex-shrink-0 text-muted-foreground" /> */}
-                <h2 className="text-muted-foreground text-md  font-semibold tracking-tight underline">
-                  <a href="mailto:info@inovaconstrucciones.com">info@inovaconstrucciones.com</a>
+                <h2 className="">
+                <Link href="mailto:info@inovaconstrucciones.com">
+                  <Button size="lg" className="uppercase h-12 px-8">
+                    proveedores
+                  </Button>
+                </Link>   
                 </h2>
-              </li> 
+              </li>   
             </ul>
           </div>
           

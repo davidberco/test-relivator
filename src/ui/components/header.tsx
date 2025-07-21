@@ -18,6 +18,7 @@ import {
 } from "~/ui/primitives/dropdown-menu";
 import { NotificationsWidget } from "./notifications/notifications-widget";
 import { ThemeToggle } from "./theme-toggle";
+import Image from "next/image";
 
 interface HeaderProps {
   showAuth?: boolean;
@@ -297,22 +298,26 @@ export function Header({ showAuth = true, isDashboard = false }: HeaderProps) {
           </div>
 
           {/* div with name Inovac */}
-          <div className=" flex items-center gap-6 p-4">
+          <div className="flex items-center justify-items-end">
             {/* Letter Inovac Left */}
-            <Link href="/" className="flex items-center gap-2">
-              <span
+            <Link href="/" className="flex items-center">
+              {/* <span
                 className={cn(
-                  "text-xl font-bold",
+                  "hidden text-xl font-bold",
                   !isDashboard &&
                     "tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent",
                 )}
               >
                 Inovac
-              </span>
+              </span> */}
+              
+              <Image 
+              src="./logoInovacColor.svg" alt="Inovac Logo" 
+              width={300} 
+              height={80} 
+              className="p-4 h-auto w-[10rem]"></Image>
             </Link>
           </div>    
-
-
         </div>
 
 

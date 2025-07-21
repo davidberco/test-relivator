@@ -23,18 +23,26 @@
   /* --font-geist-sans: 'Geist Sans', system-ui, sans-serif; */
   --font-open-sans: 'Open Sans', system-ui, sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
+
+  /* COLORS */
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
+
+  /* new colors */
+  --grayinova: #A9A6A6;
+  --redinova: #AF1510;
+  /* original primary color */
   --primary: oklch(0.21 0.006 285.885);
+  
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
+  --muted: oklch(96.744% 0.00143 285.225);
+  --muted-foreground: oklch(55.202% 0.01541 285.833);
   --accent: oklch(0.967 0.001 286.375);
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: oklch(0.577 0.245 27.325);
@@ -101,6 +109,8 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-grayinova: var(--grayinova);
+  --color-redinova: var(--redinova);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -142,11 +152,16 @@
   }
 }
 
-mark {
-  background-color: var(--color-primary);
-  color: var(--color-sidebar-primary-foreground);
-  font-style: italic;
-  clip-path: polygon(0% 15%, 100% 15%, 120% 100%, 0% 100%);
+/* Styles by BercoStudio */
+
+.remarkWord {
+  color: var(--color-background);
+  background-image: linear-gradient(var(--color-redinova), var(--color-redinova));
+  background-size: 100% 15%;
+  background-position-y: 90%;
+  background-repeat: no-repeat;
+  text-shadow: var(--color-foreground) -2px 0px 6px;
+  /* clip-path: polygon(0% 15%, 100% 15%, 120% 100%, 0% 100%); */
 }
 
 /* Style for Parallax Effect */

@@ -92,7 +92,7 @@ export const categories = [
   {
     name: "moderno",
     label: "./modernoLabel.svg",
-    labelStyle: "pr-4 justify-end drop-shadow-sm/25 drop-shadow-blue-100",
+    labelStyle: "pl-4 justify-start drop-shadow-sm/25 drop-shadow-blue-100",
     width: "55",
     heigth: "300",
     image:
@@ -101,7 +101,7 @@ export const categories = [
   {
     name: "único",
     label: "./unicoLabel.svg",
-    labelStyle: "pb-4 items-end justify-center drop-shadow-sm/25 drop-shadow-blue-300",
+    labelStyle: "pb-4 items-middle justify-center drop-shadow-sm/25 drop-shadow-neutral-100",
     width: "250",
     heigth: "300",
     image:
@@ -150,16 +150,6 @@ export const testimonials = [
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
     text: "Durante el desarrollo de nuestro proyecto con los servicios de Inovac Construcciones, uno de los aspectos que más valoro es la creatividad e innovación que demostraron. Me ofrecieron varias opciones y soluciones innovadoras, lo que resultó en un diseño final que fue funcional y estéticamente impresionante. La construcción fue llevada a cabo con gran precisión y cuidado. El equipo mantuvo una comunicación constante conmigo, informándome sobre el progreso y asegurándose de que estuviera satisfecho con cada etapa del proceso. Además, cumplieron con los plazos establecidos, algo que valoro profundamente. Desde el principio, el equipo de diseño y construcción se destacó por su excelente atención al cliente. Fueron siempre amables y se mostraron interesados en entender mis necesidades y expectativas. Durante nuestra primera reunión, me escucharon atentamente y se aseguraron de responder a todas mis preguntas, lo que me dio mucha confianza para trabajar con ellos. Aquí comparto mi testimonio, esperando que pueda ser útil para quienes estén considerando contratar estos servicios.",
-    // href: "https://thispersondoesnotexist.com",
-  },
-  {
-    author: {
-      name: "Sophia Martinez",
-      handle: "@sophiareviews",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    },
-    text: "Finally. A tech store that doesn't make me feel dumb. Everything's explained in plain English, and their chat team didn't treat me like I was annoying them. 10/10.",
     // href: "https://thispersondoesnotexist.com",
   },
 ];

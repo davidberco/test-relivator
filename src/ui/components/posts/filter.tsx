@@ -71,7 +71,7 @@ export function FilterPosts({
           {hasTags ? <SelectValue placeholder="All Tags" /> : "No tags found"}
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">All Tags</SelectItem>
+          <SelectItem value="all">Todas las Etiquetas</SelectItem>
           {tags.map((tag) => (
             <SelectItem key={tag.id} value={tag.id.toString()}>
               {tag.name}
@@ -92,7 +92,7 @@ export function FilterPosts({
           )}
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">All Categories</SelectItem>
+          <SelectItem value="all">Todas las Categorias</SelectItem>
           {categories.map((category) => (
             <SelectItem key={category.id} value={category.id.toString()}>
               {category.name}
@@ -113,7 +113,7 @@ export function FilterPosts({
           )}
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">All Authors</SelectItem>
+          <SelectItem value="all">Todos los Autores</SelectItem>
           {authors.map((author) => (
             <SelectItem key={author.id} value={author.id.toString()}>
               {author.name}
@@ -123,7 +123,7 @@ export function FilterPosts({
       </Select>
 
       <Button variant="outline" onClick={handleResetFilters}>
-        Reset Filters
+        Borrar Filtros
       </Button>
     </div>
   );

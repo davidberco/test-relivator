@@ -14,6 +14,7 @@ interface FormData {
   email: string;
   subject: string;
   message: string;
+  acceptTerms: boolean;
 }
 
 interface FormErrors {
@@ -21,6 +22,7 @@ interface FormErrors {
   email?: string;
   subject?: string;
   message?: string;
+  // acceptTerms?: string;
 }
 
 export default function ContactForm() {
@@ -28,7 +30,8 @@ export default function ContactForm() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    acceptTerms: true // default checked
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -71,6 +74,10 @@ export default function ContactForm() {
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Su mensaje debe contener al menos 10 caracteres';
     }
+
+    // if (!formData.acceptTerms) {
+    //   newErrors.acceptTerms = 'Acepta el uso de sus datos para contactarlo?'
+    // }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -97,7 +104,8 @@ export default function ContactForm() {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
+        acceptTerms: true
       });
       setSubmitted(false);
     }, 3000);
@@ -199,6 +207,23 @@ export default function ContactForm() {
                 <p className="text-sm text-red-600">{errors.message}</p>
               )}
             </div>
+
+            <div className="flex items-start space-x-2">
+              <input
+                type="checkbox"
+                id="acceptTerms"
+                name="acceptTerms"
+                checked={formData.acceptTerms}
+                onChange={(e) => setFormData({...formData, acceptTerms: e.target.checked})}
+                className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              />
+              <label htmlFor="acceptTerms" className="text-sm text-gray-700">
+                Acepto el uso de mi información para recibir contenido de Inovac Construcciones
+              </label>
+            </div>
+            {/* {errors.acceptTerms && (
+              <p className="text-sm text-red-600">{errors.acceptTerms}</p>
+            )} */}
 
             <Button 
               type="submit" 

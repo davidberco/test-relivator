@@ -8,43 +8,15 @@ import { DecoratedTextBox } from "~/ui/components/decoratedTextBox";
 import { TiltEffect } from "~/ui/components/TiltEffect";
 import { cn } from "~/lib/utils";
 import { Avatar, AvatarImage } from "~/ui/primitives/avatar";
+import { TestimonialsSection } from "~/ui/components/testimonials/testimonials-with-marquee";
 
-
-
-// Mock data for the Why Choose Us section
-const features = [
-  {
-    title: "Free Shipping",
-    description:
-      "Free shipping on all orders over $50. Fast and reliable delivery to your doorstep.",
-    icon: <Truck className="h-6 w-6 text-primary" />,
-  },
-  {
-    title: "Secure Checkout",
-    description:
-      "Your payment information is always safe and secure with us. We use industry-leading encryption.",
-    icon: <ShoppingBag className="h-6 w-6 text-primary" />,
-  },
-  {
-    title: "24/7 Support",
-    description:
-      "Our customer support team is always available to help with any questions or concerns.",
-    icon: <Clock className="h-6 w-6 text-primary" />,
-  },
-  {
-    title: "Quality Guarantee",
-    description:
-      "We stand behind the quality of every product we sell. 30-day money-back guarantee.",
-    icon: <Star className="h-6 w-6 text-primary" />,
-  },
-];
 
 export default function HomePage() {
   return (
     <>
       <main className="">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 via-muted/25  to-background h-[100vh] flex flex-col items-center justify-center">
+        <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 via-muted/25  to-background h-[65vh] flex flex-col items-center justify-center">
           
           <div className="relative mx-auto aspect-[4/3] w-full max-w-6xl overflow-hidden center-0">
             <div className="relative inset-0 z-10 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
@@ -64,13 +36,13 @@ export default function HomePage() {
             <div className="space-y-4 text-center">
               <h1 className="text-4xl md:text-5xl font-bold md:tracking-tight text-foreground leading-[1.2] py-4 px-4 md:px-12 lg:px-18" >
               La excelencia de una marca está en sus  {" "}
-              <mark>Clientes</mark>
+              <i className="remarkWord">Clientes</i>
               </h1>
             </div>
           </div>
 
           <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent"/>
-          <div className="relative justify-center space-y-6 gap-10 items-center ">
+          <div className="hidden relative justify-center space-y-6 gap-10 items-center ">
             <div className="space-y-4 text-center">
               <p className="text-left md:text-center text-md sm:text-xl md:text-3xl font-semibold leading-normal pl-20 sm:pl-18 md:pl-20 px-8">
               Te mostramos nuestro portafolio con varios de nuestros proyectos.
@@ -81,6 +53,26 @@ export default function HomePage() {
           </div>
         </section>
         
+        {/* Content Container */}
+        <section className="relative mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+            <div className="">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+              Portafolio 
+              </h2>
+            </div>
+          </div>
+
+          <div className="relative justify-center items-center pt-8">
+            <div className="text-center">
+              <p className="text-center  text-md sm:text-xl md:text-3xl font-semibold leading-normal px-8">
+              Te mostramos nuestro portafolio con varios de nuestros proyectos.
+              </p>
+            </div>
+          </div>
+
+        </section>
+
         {/* Text Decorated Box: construyamos juntos... */}
         <section id="features" className="py-8">
           <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,19 +92,19 @@ export default function HomePage() {
         </section>
 
         {/* Portafolio Section */}
-        <section className="py-12 md:py-16 ">
+        <section className="py-12 ">
           <div className="mx-auto px-12 md:px-18">  
             {/* Residencial */}
             <div id="residencial"
-              className="relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-[min-content_1fr] gap-y-4 md:gap-y-8 items-center justify-between py-8"
+              className="relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-[min-content_1fr] gap-y-4 md:gap-y-4 items-center justify-between py-8"
             >
               {/* TITLE 1 */}
-              <h2  className="col-start-2 uppercase text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-center
+              <h2  className="md:col-start-2 col-span-2 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-center
               ">
-                residencial 
+                Residencial
               </h2>
               {/* Service Background Image */}
-              <div className="relative row-start-2 w-full aspect-[1/1] hidden md:block">
+              <div className="relative row-start-1 row-span-2 w-full aspect-[1/1] hidden md:block">
               
                 <TiltEffect 
                 rotationFactor={12} 
@@ -150,12 +142,12 @@ export default function HomePage() {
               className="relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-[min-content_1fr] gap-y-4 md:gap-y-8 items-center justify-between py-8"
             >
               {/* TITLE 1 */}
-              <h2 className="col-start-2 uppercase text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-center
+              <h2 className="md:col-start-2 col-span-2 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-center
               ">
                 Corporativo 
               </h2>
               {/* Service Background Image */}
-              <div className="relative row-start-2 w-full aspect-[1/1] hidden md:block">
+              <div className="relative row-start-1 row-span-2 w-full aspect-[1/1] hidden md:block">
               
                 <TiltEffect 
                 rotationFactor={12} 
@@ -184,17 +176,18 @@ export default function HomePage() {
                 </li>
               </div>
             </div>
-            {/* Planificacion */}
+
+            {/* Arquitecura y Planificacion */}
             <div id="planificacion"
-              className="relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-[min-content_1fr] gap-y-4 md:gap-y-8 items-center justify-between  py-8"
+              className="relative grid grid-cols-1 md:grid-cols-3 md:grid-rows-[min-content_1fr] gap-y-4 md:gap-y-8 items-center justify-between py-8"
             >
               {/* TITLE 1 */}
-              <h2 className="col-start-2 uppercase text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-center
+              <h2 className="md:col-start-2 col-span-2 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-normal text-center
               ">
-                planificación 
+                Arquitectura y Planificación 
               </h2>
               {/* Service Background Image */}
-              <div className="relative row-start-2 w-full aspect-[1/1] hidden md:block">
+              <div className="relative row-start-1 row-span-2 w-full aspect-[1/1] hidden md:block">
               
                 <TiltEffect 
                 rotationFactor={12} 
@@ -229,10 +222,19 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-8 md:py-12">
+        {/* Testimonials vertical version*/}
+        <section className="hidden py-8 md:py-12">
+          {/* title tesimonios */}
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+            <div className="py-4 md:py-8">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+              Testimonios 
+              </h2>
+            </div>
+          </div>
+
           {/* Cards with testimonials */}
-          <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
+          <div className=" mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
               <div className="flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row">
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] flex-col">
@@ -258,7 +260,7 @@ export default function HomePage() {
                         <p className="text-sm text-muted-foreground mt-0">{testimonials[0].author.handle}</p>
                       </div>
                     </div>
-                    <p className="sm:text-md mt-4 text-sm text-muted-foreground ">{testimonials[0].text}</p>
+                    <p className="sm:text-md mt-4 text-sm text-muted-foreground text-justify">{testimonials[0].text}</p>
                   </div>
                   {/* Testimonial 2 */}
                   <div
@@ -281,7 +283,7 @@ export default function HomePage() {
                         <p className="text-sm text-muted-foreground mt-1">{testimonials[1].author.handle}</p>
                       </div>
                     </div>
-                    <p className="sm:text-md mt-4 text-sm text-muted-foreground ">{testimonials[1].text}</p>
+                    <p className="sm:text-md mt-4 text-sm text-muted-foreground text-justify">{testimonials[1].text}</p>
                   </div>
                   {/* Testimonial 3 */}
                   <div
@@ -304,7 +306,7 @@ export default function HomePage() {
                         <p className="text-sm text-muted-foreground mt-2">{testimonials[2].author.handle}</p>
                       </div>
                     </div>
-                    <p className="sm:text-md mt-4 text-sm text-muted-foreground ">{testimonials[2].text}</p>
+                    <p className="sm:text-md mt-4 text-sm text-muted-foreground text-justify">{testimonials[2].text}</p>
                   </div>
                   {/* Testimonial 4 */}
                   <div
@@ -327,12 +329,34 @@ export default function HomePage() {
                         <p className="text-sm text-muted-foreground mt-3">{testimonials[3].author.handle}</p>
                       </div>
                     </div>
-                    <p className="sm:text-md mt-4 text-sm text-muted-foreground ">{testimonials[3].text}</p>
+                    <p className="sm:text-md mt-4 text-sm text-muted-foreground text-justify">{testimonials[3].text}</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>      
+          </div>
+        </section>
+
+
+        {/* Testimonials carousel version*/}
+        <section className="py-12 ">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* title tesimonios */}
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+              <div className="py-4 md:py-8">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+                Testimonios 
+                </h2>
+              </div>
+            </div>
+
+            <TestimonialsSection
+              title=""
+              description="La opinión de nuestros clientes es fundamental para nosotros. Aquí te presentamos algunos testimonios que reflejan la calidad y dedicación que ponemos en cada proyecto."
+              testimonials={testimonials}
+              className="py-0"
+            />
+          </div>
         </section>
 
         {/* CTA Section */}
@@ -342,7 +366,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:16px_16px]" />
               <div className="relative z-10 mx-auto max-w-2xl text-center">
                 <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                  ¿Listo para hacer realidad tus sueños?
+                  Construyamos juntos un espacio que sea un reflejo de tu visión
                 </h2>
                 <p className="mt-4 text-lg text-muted-foreground md:text-xl">
                   Contáctanos, No dejes tu proyecto en manos del azar. Construyamos juntos un espacio que sea un reflejo de tu visión y un compromiso con el futuro.

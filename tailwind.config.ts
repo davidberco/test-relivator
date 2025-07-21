@@ -25,6 +25,8 @@ const config: Config = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        redinovac: "hsl(var(--redinova))",
+        grayinova: "hsl(var(--grayinova))",
         primary: "hsl(var(--primary))",
         "primary-foreground": "hsl(var(--primary-foreground))",
         muted: "hsl(var(--muted))",

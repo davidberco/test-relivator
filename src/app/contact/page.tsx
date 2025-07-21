@@ -17,6 +17,7 @@ import { Carousel } from "~/ui/components/carousel";
 import { Carouselmp, CarouselContent, CarouselItem, CarouselNavigation, CarouselIndicator } from "~/ui/primitives/carouselmp";
 import { DecoratedTextBox } from "~/ui/components/decoratedTextBox";
 import ContactForm from "~/ui/primitives/contact-form";
+import { FaWhatsapp } from "react-icons/fa";
 
 // Mock data for the Why Choose Us section
 const features = [
@@ -75,14 +76,51 @@ export default function HomePage() {
         </section>
 
         {/* Contact Form */}
-        <section id="features" className="py-8"> 
+        <section id="features" className="py-8">
+          <div className="mb-8 pr-20 pl-20 items-center text-center">
+            <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
+              Solicitar más información.
+            </h2>
+          </div>
+          
+          <div className="relative mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div className="items-center text-center px-8 max-w-[50vw]">
+              <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
+                ¿Lo tienes en mente?
+              </h2>
+              <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
+              Construyámoslo
+              </h2>
+
+              {/* whatsapp Button  */}
+              <div className="m-6 flex gap-6 flex-row center justify-center">
+                <Link href="wa.me/593999828558" target="_blank" rel="noopener noreferrer">
+                  <Button variant="default" size="lg" className="h-12 px-8 uppercase">
+                    <FaWhatsapp className="h-12 w-12" />
+                    Whatsapp
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="items-center text-center min-w-[50vw]">
+              <ContactForm /> 
+            </div>
+          </div> 
+        </section> 
+
+
+
+
+
+        {/* Contact Form */}
+        {/* <section id="features" className="py-8"> 
           <div className="mb-8 pr-20 pl-20 items-center text-center">
             <h2 className="text-2xl font-semibold md:text-4xl">
               Envíanos un mensaje
             </h2>
           </div>
           <ContactForm />  
-        </section>
+        </section> */}
         
         {/* Text Decorated Box: nuestra mision es transf... */}
         <section id="features" className="py-8">
@@ -115,11 +153,12 @@ export default function HomePage() {
           
           {/* Asesoria Button  */}
           <div className="flex gap-6 flex-row center justify-center">
-            <Link href="/contact">
-              <Button variant="default" size="lg" className="h-12 px-8 uppercase">
-                Solicitar Asesoría
-              </Button>
-            </Link>
+            <Link href="wa.me/593999828558" target="_blank" rel="noopener noreferrer">
+                  <Button variant="default" size="lg" className="h-12 px-8 uppercase">
+                    <FaWhatsapp className="h-12 w-12" />
+                    Whatsapp
+                  </Button>
+                </Link>
           </div>
         </section>
 

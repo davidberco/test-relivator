@@ -30,13 +30,13 @@ export function TestimonialCard({
         "bg-gradient-to-b from-muted/50 to-muted/10",
         "p-4 text-start sm:p-6",
         "hover:from-muted/60 hover:to-muted/20",
-        "max-w-[320px] sm:max-w-[320px]",
+        "max-w-[320px] md:max-w-[620px]",
         "transition-colors duration-300",
         className,
       )}
     >
       <div className="flex items-center gap-3">
-        <Avatar className="h-12 w-12">
+        <Avatar className="hidden h-12 w-12">
           <AvatarImage src={author.avatar} alt={author.name} />
         </Avatar>
         <div className="flex flex-col items-start">

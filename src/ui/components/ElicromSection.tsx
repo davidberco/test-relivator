@@ -18,13 +18,13 @@ export default function ElicromSection() {
         </h2> 
         <ul className="list-none space-y-2">  
           <li className="flex items-center gap-4 mb-8">
-            <Handshake className="h-12 w-12 lex-shrink-0 text-black" />
+            <Handshake className="h-12 w-12 lex-shrink-0 text-redinova" />
             <h2 className="text-2xl md:text-4xl font-normal tracking-tight capitalize">
               con un enfoque personalizado
             </h2>
           </li> 
           <li className="flex items-center gap-4 mb-8">
-            <HouseWifi className="h-12 w-12 lex-shrink-0 text-black" />
+            <HouseWifi className="h-12 w-12 lex-shrink-0 text-redinova" />
             <h2 className="text-2xl md:text-4xl font-normal tracking-tight capitalize">
               tecnología de vanguardia
             </h2>
@@ -55,16 +55,16 @@ export default function ElicromSection() {
               loading="eager"
             />
           
-            <h2 className="text-2xl font-black tracking-tight md:text-3xl text-center mt-6 uppercase">
+            {/* <h2 className="text-2xl font-black tracking-tight md:text-3xl text-center mt-6 uppercase">
               Elicrom
-            </h2>
+            </h2> */}
         </TiltEffect>
       </div>
 
       {/* Text Container 2 */}
       <div className="col-start-2 row-start-3 md:col-start-2 md:col-span-3 p-6 justify-center flex flex-col items-center text-center">
         <h2 className="text-2xl md:text-4xl font-semibold tracking-tight text-center">
-          hasta espacios
+          hasta espacios personalizados
         </h2>
       </div>
 
@@ -87,7 +87,7 @@ export default function ElicromSection() {
                 loading="eager"
               />
               
-              <h2 className="text-2xl font-black tracking-tight md:text-3xl text-center mt-6 uppercase">Personalizados <br /> para nuestros clientes</h2>
+              {/* <h2 className="text-2xl font-black tracking-tight md:text-3xl text-center mt-6 uppercase">Personalizados <br /> para nuestros clientes</h2> */}
             </div>
         </TiltEffect>
       </div>
