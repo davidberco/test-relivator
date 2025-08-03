@@ -15,7 +15,7 @@ const fadeX = {
       duration: 1.5, 
       // ease: [.31,.14,.17,1.87],
       // ease: [0.68,-0.55,0.27,1.55],
-      ease: [0.34, 1.56, 0.64, 1]
+      ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number],
     }
   })
 }

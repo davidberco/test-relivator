@@ -18,7 +18,7 @@ import { motion } from 'motion/react';
       scale: 1.1,
       opacity: 1,
       transition: { 
-        type: "spring", 
+        type: "spring" as const, 
         stiffness: 400,
         damping: 8
       }

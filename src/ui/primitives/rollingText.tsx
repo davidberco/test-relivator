@@ -23,7 +23,7 @@ interface RollingTextProps {
   transition?: Transition;
   getEnterDelay?: (index: number) => number;
   inView?: boolean;
-  inViewMargin?: string;
+  inViewMargin?: `${number}px` | `${number}%`;
   inViewOnce?: boolean;
   enterVariant?: {
     initial: Target;

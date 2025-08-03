@@ -19,8 +19,7 @@ export default function BracketsTitle() {
             <h2 className="text-md md:text-2xl lg:text-3xl font-normal tracking-normal px-[10] md:px-[30] lg:px-[50]">
             <RollingText 
               text="Un lugar que refleje tus aspiraciones y valores."
-              getEnterDelay={(i) => i * 0.08} 
-              inViewMargin="0px 0px -100px 0px"
+              inViewMargin="0px"
             />
             </h2>
           </DecoratedTextBox>

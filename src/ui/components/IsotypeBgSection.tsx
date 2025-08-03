@@ -8,8 +8,8 @@ export default function IsotypeBgSection() {
       {/* Background Image Container */}
       <motion.div 
         className="absolute inset-0 z-[-10] opacity-90"
-        initial={{ skew: -6 }}
-        animate={{ skew: 0 }}
+        initial={{ skewX: -6 }}
+        animate={{ skewX: 0 }}
         transition={{ duration: 2.5, ease: 'easeInOut' }}
       >
         {/* Image with overlay for better text contrast */}

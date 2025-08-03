@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { X, Phone, Mail, MapPin } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "~/ui/primitives/button";
 import { cn } from "~/lib/utils";
 
 // Using react-icons instead of lucide (installed via package.json)
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { CompanyLogoSVG } from "~/ui/icons/company-logo-svg";
 import Image from "next/image";
 
@@ -36,7 +36,7 @@ export function FloatingMenu() {
       scale: 1.1,
       opacity: 1,
       transition: { 
-        type: "spring", 
+        type: "spring" as const, 
         stiffness: 400,
         delay: 0.05
       }
@@ -52,7 +52,7 @@ export function FloatingMenu() {
       rotate: 7,
       opacity: 1,
       transform: "translateY(-4px)",
-      transition: { type: "spring", stiffness: 300 }
+      transition: { type: "spring" as const, stiffness: 300 }
     }
   };
 
@@ -61,6 +61,7 @@ export function FloatingMenu() {
       {/* Rectangular menu button */}
       <motion.div
         variants={logoVariants}
+        animate=""
         initial="rest"
         whileHover="hover">
         <Button

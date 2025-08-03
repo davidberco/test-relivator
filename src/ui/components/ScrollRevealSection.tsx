@@ -8,7 +8,7 @@ interface ScrollRevealProps {
   duration?: number
   yOffset?: number
   once?: boolean
-  easing?: 'linear' | 'easeIn' | 'easeOut' | 'easeInOut' | number[]
+  easing?: 'linear' | 'easeIn' | 'easeOut' | 'easeInOut' | [number, number, number, number]
   className?: string
 }
 
