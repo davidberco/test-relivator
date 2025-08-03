@@ -1,14 +1,29 @@
-
+'use client';
 import Link from "next/link";
-
 import { cn } from "~/lib/utils";
 import { Button } from "~/ui/primitives/button";
 import { Phone, Mail, MapPinned } from "lucide-react";
-import { HoverCard, HoverCardTrigger, HoverCardContent } from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import { WhatsAppIcon } from "../icons/whatsapp";
 import { InstagramIcon } from "../icons/instagram";
 import { FacebookIcon } from "../icons/facebook";
+import { motion } from 'motion/react';
+
+  const logoVariants = {
+    rest: { 
+      scale: 1,
+      opacity: 0.9
+    },
+    hover: {
+      scale: 1.1,
+      opacity: 1,
+      transition: { 
+        type: "spring", 
+        stiffness: 400,
+        damping: 8
+      }
+    }
+  }
 
 
 export function Footer({ className }: { className?: string }) {
@@ -18,15 +33,22 @@ export function Footer({ className }: { className?: string }) {
 
         {/* Container 1 footer */}
         <div className="grid grid-rows-1 md:grid-cols-3 gap-8 px-12 pb-12 border-b" >
-          {/* logo Inovac black */}          
-          <div className="row-start-1 md:col-start-1 items-center justify-center flex">
+          {/* logo Inovac black */}  
+
+         
+
+          <motion.div className="row-start-1 md:col-start-1 items-center justify-center flex"
+            variants={logoVariants}
+            initial="rest"
+            whileHover="hover"
+          >
             <Image  
               src="/logoInovacBlack.svg"
               alt="Inovac Construcciones Logo"
               width={300}
               height={81}
               className="object-cover max-w-[150px] md:min-w-[300px]" />
-          </div>
+          </motion.div>
 
           {/* Links */}
           <div className="row-start-2 md:row-start-1 md:col-start-2 md:col-span-2 space-y-4 text-base sm:text-lg items-center justify-center flex flex-col">

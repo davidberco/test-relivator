@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface United24BannerProps {
   onClose?: () => void;
@@ -69,9 +70,9 @@ const United24Banner: React.FC<United24BannerProps> = ({
     // Entrance animation for content
     const contentAnimation = animate(contentElements, {
       opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 800,
-      ease: "outExpo",
+      translateY: [0, 0],
+      duration: 450,
+      ease: "inExpo",
       delay: (_, i) => i * 100, // Stagger effect
     });
     animations.push(contentAnimation);
@@ -135,8 +136,8 @@ const United24Banner: React.FC<United24BannerProps> = ({
 
   // Dynamic button class based on gradient animation state
   const buttonClasses = animateGradient
-    ? "banner-button bg-[#0057b7] text-[#ffd700] font-bold py-2 px-6 rounded hover:bg-white hover:text-[#0057b7] uppercase shadow-md opacity-90 hover:opacity-100 transition-opacity duration-300"
-    : "banner-button bg-[#0057b7] dark:bg-[#ffd700] hover:bg-white dark:hover:bg-white text-[#ffd700] dark:text-blue-800 hover:text-[#0057b7] font-bold py-2 px-6 rounded uppercase shadow-md opacity-90 hover:opacity-100 transition-opacity duration-300";
+    ? "flex banner-button bg-[#0057b7] text-[#ffd700] font-bold py-2 px-6 rounded hover:bg-white hover:text-[#0057b7] uppercase shadow-md opacity-90 hover:opacity-100 transition-opacity duration-300"
+    : "flex banner-button bg-[#0057b7] dark:bg-[#ffd700] hover:bg-white dark:hover:bg-white text-[#ffd700] dark:text-blue-800 hover:text-[#0057b7] font-bold py-2 px-6 rounded uppercase shadow-md opacity-90 hover:opacity-100 transition-opacity duration-300";
 
   // Text color classes based on theme and gradient state
   const textColorClasses = animateGradient
@@ -149,11 +150,12 @@ const United24Banner: React.FC<United24BannerProps> = ({
       className={bannerClasses}
       style={backgroundStyle}
       role="banner"
-      aria-label="Support Ukraine banner"
+      aria-label="Bercostudio contact banner"
     >
-      <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 py-4 flex flex-col md:flex-row items-center justify-around">
         <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0 banner-content">
-          <div className="mb-3 md:mb-0 md:mr-5 flex-shrink-0 relative banner-logo">
+          {/* Logo United24 to change to Bercostudio */}
+          <div className="hidden mb-3 md:mb-0 md:mr-5 flex-shrink-0 relative banner-logo ">
             {/* Use Image component with different sources based on theme */}
             <Image
               src="/u24.svg"
@@ -173,29 +175,30 @@ const United24Banner: React.FC<United24BannerProps> = ({
             />
           </div>
           <p
-            className={`font-semibold text-center md:text-left banner-content ${textColorClasses}`}
+            className={`font-semibold text-center banner-content ${textColorClasses}`}
           >
-            Gracias por su interés en nuestros servicios. Estamos atentos a cualquier duda,  {" "}
+            Un producto digital de Bercostudio. Visite nuestra website {" "}
             <Link
-              href="contact"
+              href="http://bercostudio.com"
               target=""
               rel="noopener noreferrer"
               className="underline"
             >
-              contáctanos
+              bercostudio.com 
             </Link>{" "}
-            y conversemos acerca de tus sueños.
+            para más información.
           </p>
         </div>
 
         <div className="flex items-center banner-content">
           <Link
-            href="https://bercostudio.com"
+            href="https://wa.me/593999007968"
             target="_blank"
             rel="noopener noreferrer"
             className={buttonClasses}
             aria-label="whatsapp"
           >
+            <FaWhatsapp className="h-5 w-5 inline mr-2" />
             Whatsapp
           </Link>
 

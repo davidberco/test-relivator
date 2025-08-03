@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TiltEffect } from "./TiltEffect";
 import { Button } from "~/ui/primitives/button";
 import { HouseWifi, Handshake } from "lucide-react";
-import { Separator } from "~/ui/primitives/separator";
 
 
 export default function ElicromSection() {
@@ -77,7 +76,6 @@ export default function ElicromSection() {
           enable3D={false}
           className="w-full h-auto rounded-lg p-8 shadow-md bg-stone-100">
             <div className="flex flex-col items-center text-center">
-              
               <Image
                 src="/renderInterior.jpg"
                 alt="imagen personalizar"
@@ -86,8 +84,6 @@ export default function ElicromSection() {
                 className="object-contain m-4 opacity-100"
                 loading="eager"
               />
-              
-              {/* <h2 className="text-2xl font-black tracking-tight md:text-3xl text-center mt-6 uppercase">Personalizados <br /> para nuestros clientes</h2> */}
             </div>
         </TiltEffect>
       </div>

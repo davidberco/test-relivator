@@ -41,11 +41,14 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "grid-black": "url('/images/grid.svg')", // Replace with your actual asset
+        "grid-black": "url('/images/grid.svg')", // Replace with local asset
       },
+      
     },
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+  ],
 };
 
 export default config;

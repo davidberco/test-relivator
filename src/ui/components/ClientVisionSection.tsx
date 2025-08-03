@@ -5,6 +5,14 @@ import { TiltEffect } from "./TiltEffect";
 export default function ClientVisionSection() {
   return (
     <section className="relative w-full overflow-hidden py-12 md:py-16">
+      {/* Title En Inovac sabemos... */}
+      <div className="max-w-7xl p-4 sm:px-6 lg:px-8">
+        <div className="mb-8 flex flex-col items-center text-center">
+          <h2 className="text-2xl font-semibold tracking-tight md:text-4xl">
+            En Inovac sabemos que ...
+          </h2>
+        </div>
+      </div>
 
       {/* Pattern background layer */}
       <div className="absolute -z-10 left-1/4 w-[100%] h-[100%] grayscale opacity-15">
@@ -57,7 +65,7 @@ export default function ClientVisionSection() {
           </div>
           </TiltEffect>
           {/* Image 2 (Secondary, behind and up-right) */}
-          <div className="hidden absolute -top-10 left-[60%] w-[160px] md:w-[180px] lg:w-[200px] aspect-square rounded-md overflow-hidden shadow-md z-10">
+          <div className=" absolute -top-10 left-[60%] w-[160px] md:w-[180px] lg:w-[200px] aspect-square rounded-md overflow-hidden shadow-md z-10">
             <Image
               src="/clienteBg.jpg" // Replace with real image
               alt="Secondary Image"
